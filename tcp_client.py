@@ -10,15 +10,15 @@ def Client():
     mySocket = socket.socket()
     mySocket.connect((host, port))
 
-    message = input('-> ')
+    
 
     while message != 'q':
+        message = input('-> ')
         mySocket.send(message.encode())
         data = mySocket.recv(1024).decode()
 
         print('Received from server: ' + data)
 
-        message = input('-> ')
 
     mySocket.close()
 
